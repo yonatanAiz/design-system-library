@@ -14,7 +14,7 @@ jobs:
         id: release
         with:
           release-type: node
-          package-name: design-system-library
+          package-name: yonatanaiz-design-system-library
 
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
@@ -27,6 +27,10 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npm ci
         if: ${{ steps.release.outputs.release_created }}
+
+      - run: npm run build:library
+        if: ${{ steps.release.outputs.release_created }}
+
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

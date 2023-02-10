@@ -1,5 +1,5 @@
 {
-  "name": "design-system-library",
+  "name": "yonatanaiz-design-system-library",
   "version": "1.0.0",
   "description": "design system library tutorial",
   "main": "dist/main.js",
@@ -34,6 +34,9 @@
     "type": "git",
     "url": "git+https://github.com/yonatanAiz/design-system-library.git"
   },
+  "files": [
+    "dist"
+  ],
   "author": "yonatanAiz",
   "license": "ISC",
   "bugs": {
