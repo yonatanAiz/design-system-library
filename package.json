@@ -13,8 +13,9 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "start:build": "start-storybook -p 6006 -s ./storybook-static",
-    "build": "webpack --mode production",
-    "build-storybook": "build-storybook",
+    "build:library": "webpack --mode production",
+    "build:storybook": "build-storybook",
+    "build": "npm run build:library && npm run build:storybook",
     "test": "jest --config test/jest.config.js",
     "test:watch": "yarn test --watch",
     "test:staged": "jest --bail --findRelatedTests",
