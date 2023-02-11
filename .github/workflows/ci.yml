@@ -28,7 +28,7 @@ jobs:
         run: npm run test
 
       - name: Test storyshots 📸
-        run: npm run storyshots
+        run: npm run storybook:snapshots
 
       - name: Lint the code 🧹
         run: npm run eslint
