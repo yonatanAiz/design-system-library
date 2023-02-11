@@ -6,6 +6,17 @@ export interface {{ pascalCase name }}Props {
     className?: string;
 }
 
+{{#if forwardRef}}
+export const {{ pascalCase name }} = React.forwardRef<HTMLDivElement, {{ pascalCase name }}Props>(({ className }, ref) => {
+  return (
+    <div ref={ref} className={classnames(styles.{{ camelCase name }}, className)}>
+     {{ pascalCase name }}
+    </div>
+  );
+});
+
+{{ pascalCase name }}.displayName = '{{ pascalCase name }}';
+{{else}}
 const {{ pascalCase name }} = ({ className }: {{ pascalCase name }}Props) => {
   return (
     <div className={classnames(styles.{{ camelCase name }}, className)}>
@@ -13,5 +24,6 @@ const {{ pascalCase name }} = ({ className }: {{ pascalCase name }}Props) => {
     </div>
   );
 };
+{{/if}}
 
 export default {{ pascalCase name }};
