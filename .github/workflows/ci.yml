@@ -18,17 +18,20 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install dependencies 📦
         run: npm ci
 
-      - name: Build the code
+      - name: Build the code 🛠️
         run: npm run build
 
-      - name: Test the code
+      - name: Test the code 🧪
         run: npm run test
 
-      - name: Lint the code
+      - name: Test storyshots 📸
+        run: npm run storyshots
+
+      - name: Lint the code 🧹
         run: npm run eslint
 
-      - name: prettier the code
+      - name: prettier the code ✨
         run: npm run prettier:check
