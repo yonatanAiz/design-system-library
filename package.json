@@ -6,8 +6,8 @@
   "types": "dist/index.d.ts",
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "npm run eslint:fix",
-      "npm run prettier:write"
+      "npm run eslint",
+      "npm run prettier:check"
     ]
   },
   "scripts": {
