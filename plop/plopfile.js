@@ -10,6 +10,11 @@ module.exports = function plopGenerator(
         name: 'name',
         message: 'Component name',
       },
+      {
+        name: 'forwardRef',
+        message: 'Should the component forward ref?',
+        type: 'confirm',
+      }
     ],
     actions: [
       {
