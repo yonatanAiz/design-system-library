@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-    paths: ['src/components/**', 'src/style/**']
+    paths: ['src/components/**', 'src/style/**', 'src/icons/*']
 
 permissions: write-all
 
