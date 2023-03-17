@@ -1,6 +1,6 @@
 {
   "name": "yonatanaiz-design-system-library",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "design system library tutorial",
   "main": "dist/main.js",
   "types": "dist/index.d.ts",
