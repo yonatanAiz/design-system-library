@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/yonatanAiz/design-system-library/compare/v1.1.0...v1.2.0) (2023-03-17)
+
+
+### Features
+
+* **button:** make button forward ref ([#7](https://github.com/yonatanAiz/design-system-library/issues/7)) ([adbd116](https://github.com/yonatanAiz/design-system-library/commit/adbd116d3028e40afb29784490d7d2d15090d9b6))
+* **icons:** add icons integration ([#10](https://github.com/yonatanAiz/design-system-library/issues/10)) ([94987cc](https://github.com/yonatanAiz/design-system-library/commit/94987cc42bc5c54f3a79565585a49584e464c834))
+* **typography:** create component ([#9](https://github.com/yonatanAiz/design-system-library/issues/9)) ([0832571](https://github.com/yonatanAiz/design-system-library/commit/0832571ac5f09d2d1ab903fc67c96c356e742eeb))
+
 ## [1.1.0](https://github.com/yonatanAiz/design-system-library/compare/v1.0.0...v1.1.0) (2023-02-10)
 
 
