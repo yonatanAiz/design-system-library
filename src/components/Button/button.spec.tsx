@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Button, { ButtonProps } from './Button';
-import { buttonDriver } from './button.testDriver';
+import { buttonDriver } from '../../drivers';
 
 const TEXT_CONTENT = 'Click me';
 
