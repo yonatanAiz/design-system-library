@@ -5,14 +5,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     main: './src/index.ts',
-    drivers: './src/drivers.ts',
+    drivers: './src/drivers/index.ts',
+    icons: './src/icons/index.ts',
   },
-  externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     libraryTarget: 'umd',
   },
+  externals: [nodeExternals()],
   plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
