@@ -3,13 +3,31 @@
   "version": "1.2.0",
   "description": "design system library tutorial",
   "main": "dist/main.js",
-  "types": "dist/index.d.ts",
+  "types": "./index.d.ts",
   "lint-staged": {
     "*.{ts,tsx,css}": [
       "npm run eslint",
       "npm run prettier:check"
     ]
   },
+  "exports": {
+    ".": {
+      "import": "./dist/main.js"
+    },
+    "./icons": {
+      "import": "./dist/icons.js"
+    },
+    "./drivers": {
+      "import": "./dist/drivers.js"
+    },
+    "./styles": "./dist/main.css"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://"
+    }
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "start:build": "start-storybook -p 6006 -s ./storybook-static",
@@ -34,7 +52,12 @@
     "url": "git+https://github.com/yonatanAiz/design-system-library.git"
   },
   "files": [
-    "dist"
+    "dist/*",
+    "index.d.ts",
+    "drivers.d.ts",
+    "icons.d.ts",
+    "components.d.ts",
+    "styles.d.ts"
   ],
   "author": "yonatanAiz",
   "license": "ISC",
