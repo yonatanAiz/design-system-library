@@ -1,4 +1,7 @@
-import '../src/style/index.css';
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import { ThemeProvider } from 'styled-components';
+import { theme,GlobalStyles } from '../src/style';
+
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -9,3 +12,14 @@ export const parameters = {
     },
   },
 }
+
+
+export const decorators = [
+  withThemeFromJSXProvider({
+  themes: {
+    theme: theme,
+  },
+  defaultTheme: 'theme',
+  Provider: ThemeProvider,
+  GlobalStyles,
+})];

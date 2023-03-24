@@ -1,84 +1,45 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import Typography from './Typography';
-import { typographyDriver } from './typography.testDriver';
-import { classMapper } from './Typography.utils';
+import { DesignSystemProvider } from '../../style';
+import { TypographyProps, TypographyVariants } from './Typography.types';
+
+const typographyVariantHTMLElementMap: Record<TypographyVariants, string> = {
+  [TypographyVariants.Header1]: 'H1',
+  [TypographyVariants.Header2]: 'H2',
+  [TypographyVariants.Header3]: 'H3',
+  [TypographyVariants.Header4]: 'H4',
+  [TypographyVariants.Header5]: 'H5',
+  [TypographyVariants.Header6]: 'H6',
+  [TypographyVariants.Body1]: 'SPAN',
+  [TypographyVariants.Body2]: 'SPAN',
+  [TypographyVariants.Subtitle1]: 'P',
+  [TypographyVariants.Subtitle2]: 'P',
+};
+
+const renderTypography = (props: TypographyProps) => {
+  const { getByTestId } = render(
+    <DesignSystemProvider>
+      <Typography {...props} />
+    </DesignSystemProvider>,
+  );
+
+  return getByTestId(`${props.variant}-typography`);
+};
 
 describe('Typography', () => {
-  const notHeadingCases = [
-    {
-      componentName: 'Body1',
-      tagName: 'P',
-      className: classMapper['body1'],
-    },
-    {
-      componentName: 'Body2',
-      tagName: 'P',
-      className: classMapper['body2'],
-    },
-    {
-      componentName: 'Subtitle1',
-      tagName: 'P',
-      className: classMapper['subtitle1'],
-    },
-    {
-      componentName: 'Subtitle2',
-      tagName: 'P',
-      className: classMapper['subtitle2'],
-    },
-  ];
-  const cases = [
-    {
-      componentName: 'Header1',
-      tagName: 'H1',
-      className: classMapper['h1'],
-    },
-    {
-      componentName: 'Header2',
-      tagName: 'H2',
-      className: classMapper['h2'],
-    },
-    {
-      componentName: 'Header3',
-      tagName: 'H3',
-      className: classMapper['h3'],
-    },
-    {
-      componentName: 'Header4',
-      tagName: 'H4',
-      className: classMapper['h4'],
-    },
-    {
-      componentName: 'Header5',
-      tagName: 'H5',
-      className: classMapper['h5'],
-    },
-    {
-      componentName: 'Header6',
-      tagName: 'H6',
-      className: classMapper['h6'],
-    },
-    ...notHeadingCases,
-  ];
+  it.each(Object.keys(TypographyVariants))(
+    'should render %s variant',
+    (variant) => {
+      const typography = renderTypography({
+        variant: variant as TypographyVariants,
+        children:
+          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur',
+      });
 
-  it.each(cases)('should render $componentName', (testCase) => {
-    const { componentName, tagName, className } = testCase;
-    const Component = Typography[componentName as keyof typeof Typography];
-    render(<Component>{componentName}</Component>);
-    const typography = typographyDriver.getTypography(componentName);
-    expect(typography).toBeInTheDocument();
-    expect(typography.tagName).toBe(tagName);
-    expect(typography).toHaveClass(className);
-  });
-
-  it.each(notHeadingCases)(
-    'should render $componentName as other tag',
-    (testCase) => {
-      const { componentName } = testCase;
-      const Component = Typography[componentName as keyof typeof Typography];
-      render(<Component as="span">{componentName}</Component>);
-      const typography = typographyDriver.getTypography(componentName);
-      expect(typography.tagName).toBe('SPAN');
+      expect(typography.tagName).toEqual(
+        typographyVariantHTMLElementMap[variant as TypographyVariants],
+      );
     },
   );
 });

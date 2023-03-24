@@ -1,24 +1,18 @@
-export type TypographyVariant =
-  | 'body1'
-  | 'body2'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'subtitle1'
-  | 'subtitle2';
-
-export interface TypographyProps {
-  className?: string;
-  variant: TypographyVariant;
-  children: React.ReactNode;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p' | 'div' | 'span';
+export enum TypographyVariants {
+  Header1 = 'Header1',
+  Header2 = 'Header2',
+  Header3 = 'Header3',
+  Header4 = 'Header4',
+  Header5 = 'Header5',
+  Header6 = 'Header6',
+  Body1 = 'Body1',
+  Body2 = 'Body2',
+  Subtitle1 = 'Subtitle1',
+  Subtitle2 = 'Subtitle2',
 }
 
-export type PartialTypographyProps = Omit<TypographyProps, 'variant' | 'as'>;
-
-export type NonHeadingProps = PartialTypographyProps & {
-  as?: 'div' | 'p' | 'span';
-};
+export interface TypographyProps {
+  variant?: TypographyVariants;
+  children: React.ReactNode;
+  className?: string;
+}

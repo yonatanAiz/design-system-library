@@ -1,6 +1,5 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -14,17 +13,12 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: [nodeExternals()],
-  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
         test: /\.(ts)x?$/,
         exclude: /node_modules/,
         use: 'ts-loader',
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },

@@ -1,17 +1,13 @@
 import React from 'react';
-import styles from './{{ camelCase name }}.module.css';
-import classnames from 'classnames';
-
-export interface {{ pascalCase name }}Props {
-    className?: string;
-}
+import { {{ pascalCase name }}Props } from './{{ camelCase name }}.types';
+import * as S from './{{ camelCase name }}.styled';
 
 {{#if forwardRef}}
 export const {{ pascalCase name }} = React.forwardRef<HTMLDivElement, {{ pascalCase name }}Props>(({ className }, ref) => {
   return (
-    <div ref={ref} className={classnames(styles.{{ camelCase name }}, className)}>
+    <S.{{ pascalCase name }} className={className} ref={ref}>
      {{ pascalCase name }}
-    </div>
+    </S.{{ pascalCase name }}>
   );
 });
 
@@ -19,9 +15,9 @@ export const {{ pascalCase name }} = React.forwardRef<HTMLDivElement, {{ pascalC
 {{else}}
 const {{ pascalCase name }} = ({ className }: {{ pascalCase name }}Props) => {
   return (
-    <div className={classnames(styles.{{ camelCase name }}, className)}>
+    <S.{{ pascalCase name }} className={className}>
      {{ pascalCase name }}
-    </div>
+    </S.{{ pascalCase name }}>
   );
 };
 {{/if}}

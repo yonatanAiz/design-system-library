@@ -1,13 +1,6 @@
 import React from 'react';
-import styles from './button.module.css';
-import classnames from 'classnames';
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: 'primary' | 'secondary' | 'danger';
-  icon?: React.ReactNode;
-  variant?: 'contained' | 'outlined' | 'text';
-}
+import * as S from './button.styled';
+import { ButtonProps } from './Button.types';
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
@@ -17,26 +10,21 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       icon,
       children,
-      className,
       ...props
     },
     ref,
   ) => {
     return (
-      <button
+      <S.Button
         {...props}
         ref={ref}
         type={type}
-        className={classnames(
-          styles.button,
-          className,
-          styles[variant],
-          styles[color],
-        )}
+        color={color}
+        variant={variant}
       >
         {icon ? <span data-testid="button-icon-prefix">{icon}</span> : null}
         {children}
-      </button>
+      </S.Button>
     );
   },
 );

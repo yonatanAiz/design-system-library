@@ -1,12 +1,19 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Button, { ButtonProps } from './Button';
+import Button from './Button';
 import { buttonDriver } from '../../drivers';
+import { ButtonProps } from './Button.types';
+import { DesignSystemProvider } from '../../style/DesignSystemProvider';
+import { theme } from '../../style/theme';
 
 const TEXT_CONTENT = 'Click me';
 
 const renderButton = (props?: ButtonProps) =>
-  render(<Button {...props}>{TEXT_CONTENT}</Button>);
+  render(
+    <DesignSystemProvider>
+      <Button {...props}>{TEXT_CONTENT}</Button>
+    </DesignSystemProvider>,
+  );
 
 describe('Button', () => {
   it('should render', () => {
@@ -16,23 +23,23 @@ describe('Button', () => {
 
   it('should render primary contained by default', () => {
     renderButton();
-    const buttonClassName = buttonDriver.getButton().className;
-    expect(buttonClassName).toContain('contained');
-    expect(buttonClassName).toContain('primary');
+    expect(buttonDriver.getButton()).toHaveStyle({
+      backgroundColor: theme.colors.primary[500],
+    });
   });
 
   it('should render secondary outlined', () => {
     renderButton({ variant: 'outlined', color: 'secondary' });
-    const buttonClassName = buttonDriver.getButton().className;
-    expect(buttonClassName).toContain('outlined');
-    expect(buttonClassName).toContain('secondary');
+    expect(buttonDriver.getButton()).toHaveStyle({
+      color: theme.colors.secondary[500],
+    });
   });
 
   it('should render danger text', () => {
     renderButton({ variant: 'text', color: 'danger' });
-    const buttonClassName = buttonDriver.getButton().className;
-    expect(buttonClassName).toContain('text');
-    expect(buttonClassName).toContain('danger');
+    expect(buttonDriver.getButton()).toHaveStyle({
+      color: theme.colors.error[600],
+    });
   });
 
   it('should render with icon', () => {
