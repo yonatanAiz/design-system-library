@@ -14,17 +14,12 @@ module.exports = {
     libraryTarget: 'umd',
   },
   externals: [nodeExternals()],
-  plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
         test: /\.(ts)x?$/,
         exclude: /node_modules/,
         use: 'ts-loader',
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
