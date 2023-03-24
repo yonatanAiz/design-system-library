@@ -1,7 +1,6 @@
-// .storybook/preview.js
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
-import {  createGlobalStyle, ThemeProvider } from 'styled-components';
-import { theme, DesignSystemProvider,GlobalStyles } from '../src/style';
+import { ThemeProvider } from 'styled-components';
+import { theme,GlobalStyles } from '../src/style';
 
 
 export const parameters = {
