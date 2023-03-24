@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/yonatanAiz/design-system-library/compare/v1.2.0...v2.0.0) (2023-03-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* moved all styles to styled-components
+
+### Features
+
+* change to styled components ([#13](https://github.com/yonatanAiz/design-system-library/issues/13)) ([0b446aa](https://github.com/yonatanAiz/design-system-library/commit/0b446aa1d181881785802e31c72edfe7ce228ac6))
+
 ## [1.2.0](https://github.com/yonatanAiz/design-system-library/compare/v1.1.0...v1.2.0) (2023-03-17)
 
 
