@@ -139,8 +139,8 @@ export const Button = styled.button<
   border-radius: 8px;
   cursor: pointer;
 
-  font-family: ${(props) => props.theme.fontFamily[2]};
-  font-weight: ${(props) => props.theme.fontWeight[3]};
+  font-family: ${(props) => props.theme.typography.fontFamily[2]};
+  font-weight: ${(props) => props.theme.typography.fontWeight[3]};
   font-size: ${BUTTON_SIZE.MEDIUM};
   letter-spacing: ${BUTTON_LETTER_SPACING.MEDIUM};
 

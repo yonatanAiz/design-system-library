@@ -57,7 +57,7 @@
     "drivers.d.ts",
     "icons.d.ts",
     "components.d.ts",
-    "styles.d.ts"
+    "styled.d.ts"
   ],
   "author": "yonatanAiz",
   "license": "ISC",

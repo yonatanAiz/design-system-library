@@ -1,9 +1,8 @@
 // .storybook/preview.js
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 import {  createGlobalStyle, ThemeProvider } from 'styled-components';
-import { theme } from '../src/style/theme';
+import { theme, DesignSystemProvider,GlobalStyles } from '../src/style';
 
-import '../src/style/index.css';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,9 +13,6 @@ export const parameters = {
     },
   },
 }
-const GlobalStyles = createGlobalStyle`
-
-`;
 
 
 export const decorators = [
