@@ -1,15 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import Button from './Button';
 import { buttonDriver } from '../../drivers';
 import { ButtonProps } from './Button.types';
 import { DesignSystemProvider } from '../../style/DesignSystemProvider';
 import { theme } from '../../style/theme';
+import { renderWithTheme } from '../../utils/test/renderWithTheme';
 
 const TEXT_CONTENT = 'Click me';
 
 const renderButton = (props?: ButtonProps) =>
-  render(
+  renderWithTheme(
     <DesignSystemProvider>
       <Button {...props}>{TEXT_CONTENT}</Button>
     </DesignSystemProvider>,

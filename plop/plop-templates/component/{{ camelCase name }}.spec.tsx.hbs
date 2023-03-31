@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import {{ pascalCase name }}, { {{ pascalCase name }}Props } from './{{ pascalCase name }}';
+import { renderWithTheme } from '../../utils/test/renderWithTheme';
+import {{ pascalCase name }} } from './{{ pascalCase name }}';
+import { {{ pascalCase name }}Props } from './{{ camelCase name }}.types';
 import { {{ camelCase name }}Driver } from './{{ camelCase name }}.testDriver';
 
 const render{{ pascalCase name }} = (props?: {{ pascalCase name }}Props) =>
-  render(<{{ pascalCase name }} {...props} />);
+  renderWithTheme(<{{ pascalCase name }} {...props} />);
 
 describe('{{ pascalCase name }}', () => {
   it('should render', () => {
