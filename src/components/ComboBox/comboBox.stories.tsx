@@ -1,10 +1,5 @@
 import React from 'react';
-import ComboBox, {
-  ComboBoxInput,
-  ComboBoxItem,
-  ComboBoxLabel,
-  ComboBoxList,
-} from './ComboBox';
+import ComboBox from './ComboBox';
 
 export default {
   title: 'Atoms/ComboBox',
@@ -42,12 +37,12 @@ export const Default = () => {
       }}
       value={selectedItem?.title || null}
     >
-      <ComboBoxLabel>Label</ComboBoxLabel>
-      <ComboBoxInput onChange={setFilterText} value={filterText} />
+      <ComboBox.Label>Label</ComboBox.Label>
+      <ComboBox.Input onChange={setFilterText} value={filterText} />
 
-      <ComboBoxList>
+      <ComboBox.List>
         {filteredBooks.map((book, index) => (
-          <ComboBoxItem key={book.title} value={book.title} index={index}>
+          <ComboBox.Item key={book.title} value={book.title} index={index}>
             {({ isHighlighted, isSelected }) => {
               return (
                 <div
@@ -64,9 +59,9 @@ export const Default = () => {
                 </div>
               );
             }}
-          </ComboBoxItem>
+          </ComboBox.Item>
         ))}
-      </ComboBoxList>
+      </ComboBox.List>
     </ComboBox>
   );
 };

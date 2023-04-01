@@ -14,7 +14,7 @@ function executeFunctionOrReturnPlain<T>(value: T, props: unknown): T {
   return typeof value === 'function' ? value(props) : value;
 }
 
-export const ComboBoxLabel = ({ children, className }: ComboBoxLabelProps) => {
+const ComboBoxLabel = ({ children, className }: ComboBoxLabelProps) => {
   const { getLabelProps, isOpen } = useComboBoxContext();
 
   return (
@@ -31,11 +31,7 @@ export const ComboBoxLabel = ({ children, className }: ComboBoxLabelProps) => {
   );
 };
 
-export const ComboBoxInput = ({
-  className,
-  onChange,
-  value,
-}: ComboBoxInputProps) => {
+const ComboBoxInput = ({ className, onChange, value }: ComboBoxInputProps) => {
   const { getInputProps, isOpen, selectedValue } = useComboBoxContext();
 
   React.useEffect(() => {
@@ -59,10 +55,7 @@ export const ComboBoxInput = ({
   );
 };
 
-export const ComboBoxButton = ({
-  children,
-  className,
-}: ComboBoxButtonProps) => {
+const ComboBoxButton = ({ children, className }: ComboBoxButtonProps) => {
   const { getToggleButtonProps, isOpen } = useComboBoxContext();
 
   return (
@@ -79,7 +72,7 @@ export const ComboBoxButton = ({
   );
 };
 
-export const ComboBoxList = ({ children, className }: ComboBoxMenuProps) => {
+const ComboBoxList = ({ children, className }: ComboBoxMenuProps) => {
   const { isOpen, getMenuProps } = useComboBoxContext();
 
   return (
@@ -94,7 +87,7 @@ export const ComboBoxList = ({ children, className }: ComboBoxMenuProps) => {
   );
 };
 
-export const ComboBoxItem = ({
+const ComboBoxItem = ({
   value,
   children,
   index,
@@ -141,5 +134,11 @@ const ComboBox = ({ className, onChange, value, children }: ComboBoxProps) => {
     </ComboBoxProvider>
   );
 };
+
+ComboBox.Label = ComboBoxLabel;
+ComboBox.Input = ComboBoxInput;
+ComboBox.Button = ComboBoxButton;
+ComboBox.List = ComboBoxList;
+ComboBox.Item = ComboBoxItem;
 
 export default ComboBox;

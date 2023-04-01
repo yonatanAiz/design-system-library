@@ -5,10 +5,7 @@ import AccordionProvider, { useAccordionContext } from './Accordion.context';
 import { ExpandDown, ExpandUp } from '../../icons';
 import { randomId } from '../../utils/randomId';
 
-export const AccordionItem = ({
-  children,
-  renderTitle,
-}: AccordionItemProps) => {
+const AccordionItem = ({ children, renderTitle }: AccordionItemProps) => {
   const itemId = React.useRef(randomId());
   const { activeItemId, onItemExpand } = useAccordionContext();
   const isExpanded = activeItemId === itemId.current;
@@ -39,7 +36,7 @@ export const AccordionItem = ({
 };
 
 const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
-  ({ className, children }, ref) => {
+  ({ className, children }, ref: React.ForwardedRef<HTMLDivElement>) => {
     return (
       <AccordionProvider>
         <S.Accordion
@@ -52,8 +49,14 @@ const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
       </AccordionProvider>
     );
   },
-);
+) as React.ForwardRefExoticComponent<
+  AccordionProps & React.RefAttributes<HTMLDivElement>
+> & {
+  Item: React.FC<AccordionItemProps>;
+};
 
 Accordion.displayName = 'Accordion';
+
+Accordion.Item = AccordionItem;
 
 export default Accordion;
