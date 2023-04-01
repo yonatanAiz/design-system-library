@@ -35,14 +35,14 @@
     "build:storybook": "build-storybook",
     "build": "npm run build:library && npm run build:storybook",
     "test": "jest --config test/jest.config.js",
-    "test:watch": "yarn test --watch",
+    "test:watch": "npm run test -- --watch",
     "test:staged": "jest --bail --findRelatedTests",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
     "plop": "plop --plopfile plop/plopfile.js",
-    "create:component": "yarn plop component",
+    "create:component": "npm run plop component && npm run prettier:write",
     "prepare": "husky install",
     "lint": "lint-staged"
   },
@@ -112,7 +112,7 @@
     "react-dom": ">= 17.0.2"
   },
   "dependencies": {
-    "classnames": "^2.3.2",
+    "downshift": "^7.6.0",
     "styled-components": "^5.3.9"
   }
 }

@@ -1,3 +1,12 @@
 export interface {{ pascalCase name }}Props {
     className?: string;
 }
+
+{{#if context}}
+export interface {{ pascalCase name }}ContextProps {
+}
+
+export interface {{ pascalCase name }}ContextProviderProps {
+    children: React.ReactNode;
+}
+{{/if}}
