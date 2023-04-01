@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.0.0](https://github.com/yonatanAiz/design-system-library/compare/v2.1.0...v3.0.0) (2023-04-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* moved all styles to styled-components
+
+### Features
+
+* **Accordion:** create component ([#15](https://github.com/yonatanAiz/design-system-library/issues/15)) ([f0868a2](https://github.com/yonatanAiz/design-system-library/commit/f0868a2c1607a6f1cb0ebe33974da0d67b94a7e9))
+* **button:** add feature ([#3](https://github.com/yonatanAiz/design-system-library/issues/3)) ([2ee98ef](https://github.com/yonatanAiz/design-system-library/commit/2ee98ef50f41865a067879b989e4be292b8dd311))
+* **button:** make button forward ref ([#7](https://github.com/yonatanAiz/design-system-library/issues/7)) ([adbd116](https://github.com/yonatanAiz/design-system-library/commit/adbd116d3028e40afb29784490d7d2d15090d9b6))
+* change to styled components ([#13](https://github.com/yonatanAiz/design-system-library/issues/13)) ([0b446aa](https://github.com/yonatanAiz/design-system-library/commit/0b446aa1d181881785802e31c72edfe7ce228ac6))
+* **ComboBox:** component ([#17](https://github.com/yonatanAiz/design-system-library/issues/17)) ([578e402](https://github.com/yonatanAiz/design-system-library/commit/578e4027127a887c3d63505f4059c9d4948ef7fa))
+* **icons:** add icons integration ([#10](https://github.com/yonatanAiz/design-system-library/issues/10)) ([94987cc](https://github.com/yonatanAiz/design-system-library/commit/94987cc42bc5c54f3a79565585a49584e464c834))
+* **typography:** create component ([#9](https://github.com/yonatanAiz/design-system-library/issues/9)) ([0832571](https://github.com/yonatanAiz/design-system-library/commit/0832571ac5f09d2d1ab903fc67c96c356e742eeb))
+
+
+### Bug Fixes
+
+* **button:** styles ([#1](https://github.com/yonatanAiz/design-system-library/issues/1)) ([def17a7](https://github.com/yonatanAiz/design-system-library/commit/def17a700714fa3792a17b0c97c49d132e525334))
+* combobox and accordion composition ([#19](https://github.com/yonatanAiz/design-system-library/issues/19)) ([a950660](https://github.com/yonatanAiz/design-system-library/commit/a9506603a547d936d32e00001c0c6df05067d54b))
+
 ## [2.1.0](https://github.com/yonatanAiz/design-system-library/compare/v2.0.0...v2.1.0) (2023-04-01)
 
 
