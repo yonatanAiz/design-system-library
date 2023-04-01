@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.0](https://github.com/yonatanAiz/design-system-library/compare/v2.0.0...v2.1.0) (2023-04-01)
+
+
+### Features
+
+* **Accordion:** create component ([#15](https://github.com/yonatanAiz/design-system-library/issues/15)) ([f0868a2](https://github.com/yonatanAiz/design-system-library/commit/f0868a2c1607a6f1cb0ebe33974da0d67b94a7e9))
+* **ComboBox:** component ([#17](https://github.com/yonatanAiz/design-system-library/issues/17)) ([578e402](https://github.com/yonatanAiz/design-system-library/commit/578e4027127a887c3d63505f4059c9d4948ef7fa))
+
 ## [2.0.0](https://github.com/yonatanAiz/design-system-library/compare/v1.2.0...v2.0.0) (2023-03-24)
 
 
