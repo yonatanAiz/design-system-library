@@ -1,13 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { renderWithTheme } from '../../utils/test/renderWithTheme';
-import ComboBox, {
-  ComboBoxButton,
-  ComboBoxInput,
-  ComboBoxItem,
-  ComboBoxLabel,
-  ComboBoxList,
-} from './ComboBox';
+import ComboBox from './ComboBox';
 import { comboBoxDriver } from './comboBox.testDriver';
 
 const books = [
@@ -38,16 +32,16 @@ const ComboBoxComponent = ({
 
   return (
     <ComboBox onChange={OnChangeMock} value={initialSelected?.title || null}>
-      <ComboBoxLabel>Label</ComboBoxLabel>
-      <ComboBoxInput onChange={setFilterText} value={filterText} />
-      <ComboBoxButton>Toggle</ComboBoxButton>
-      <ComboBoxList>
+      <ComboBox.Label>Label</ComboBox.Label>
+      <ComboBox.Input onChange={setFilterText} value={filterText} />
+      <ComboBox.Button>Toggle</ComboBox.Button>
+      <ComboBox.List>
         {filteredBooks.map((book, index) => (
-          <ComboBoxItem key={book.title} value={book.title} index={index}>
+          <ComboBox.Item key={book.title} value={book.title} index={index}>
             <div>{book.title}</div>
-          </ComboBoxItem>
+          </ComboBox.Item>
         ))}
-      </ComboBoxList>
+      </ComboBox.List>
     </ComboBox>
   );
 };

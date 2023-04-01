@@ -1,18 +1,18 @@
 import React from 'react';
-import Accordion, { AccordionItem } from './Accordion';
+import Accordion from './Accordion';
 import { Typography, TypographyVariants } from '../Typography';
 import { Meta } from '@storybook/react';
 
 export default {
   title: 'Atoms/Accordion',
   component: Accordion,
-  subcomponents: { AccordionItem },
+  subcomponents: { AccordionItem: Accordion.Item },
 } as Meta;
 
 export const Default = () => (
   <Accordion>
     {Array.from({ length: 3 }).map((_, index) => (
-      <AccordionItem
+      <Accordion.Item
         key={index}
         renderTitle={(isExpanded) => (
           <Typography>
@@ -23,7 +23,7 @@ export const Default = () => (
         <Typography variant={TypographyVariants.Body2}>
           Accordion content {index + 1}
         </Typography>
-      </AccordionItem>
+      </Accordion.Item>
     ))}
   </Accordion>
 );

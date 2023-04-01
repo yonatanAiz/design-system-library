@@ -1,5 +1,5 @@
 import React from 'react';
-import Accordion, { AccordionItem } from './Accordion';
+import Accordion from './Accordion';
 import { AccordionProps } from './accordion.types';
 import { accordionDriver } from './accordion.testDriver';
 import { renderWithTheme } from '../../utils/test/renderWithTheme';
@@ -21,7 +21,7 @@ const renderAccordion = (
   renderWithTheme(
     <Accordion {...props}>
       {Array.from({ length: numberOfChildren }).map((_, index) => (
-        <AccordionItem
+        <Accordion.Item
           key={index}
           renderTitle={(isExpanded) => (
             <span>
@@ -32,7 +32,7 @@ const renderAccordion = (
           )}
         >
           <span>Accordion content {index + 1}</span>
-        </AccordionItem>
+        </Accordion.Item>
       ))}
     </Accordion>,
   );
