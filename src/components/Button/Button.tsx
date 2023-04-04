@@ -5,8 +5,8 @@ import { ButtonProps } from './Button.types';
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
-      color = 'primary',
       variant = 'contained',
+      color = 'primary',
       type = 'button',
       icon,
       children,
