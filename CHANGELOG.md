@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/yonatanAiz/design-system-library/compare/v3.0.1...v3.0.2) (2023-04-28)
+
+
+### Bug Fixes
+
+* **Button:** props ([#22](https://github.com/yonatanAiz/design-system-library/issues/22)) ([460908c](https://github.com/yonatanAiz/design-system-library/commit/460908cbd69706bde2d54d31ba1d1953448dbb6d))
+
 ## [3.0.1](https://github.com/yonatanAiz/design-system-library/compare/v3.0.0...v3.0.1) (2023-04-04)
 
 
