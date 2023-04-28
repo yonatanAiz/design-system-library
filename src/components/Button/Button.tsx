@@ -7,7 +7,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       variant = 'contained',
       type = 'button',
-      color = 'secondary',
+      color = 'primary',
       icon,
       children,
       ...props
